@@ -12,7 +12,6 @@ navegador = webdriver.Chrome(options=options)
 navegador.get('https://gizmodo.uol.com.br')
 
 
-
 lista_noticias = []
 
 
@@ -41,7 +40,6 @@ for i in range(10):
     lista_noticias.append([titulo.text, data.text, resumo.text])
 
 navegador.quit()
-
 
 
 news = pd.DataFrame(lista_noticias, columns=['Título da notícia', 'data da notícia','Resumo da notícia'])

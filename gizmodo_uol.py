@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 import pandas as pd
 from selenium.webdriver.chrome.options import Options
-from time import sleep
+
 
 options = Options()
 options.add_argument('window-size=400,800')
@@ -11,7 +11,7 @@ options.add_argument('window-size=400,800')
 navegador = webdriver.Chrome(options=options)
 navegador.get('https://gizmodo.uol.com.br')
 
-sleep(2)
+
 
 lista_noticias = []
 
@@ -41,6 +41,7 @@ for i in range(10):
     lista_noticias.append([titulo.text, data.text, resumo.text])
 
 navegador.quit()
+
 
 
 news = pd.DataFrame(lista_noticias, columns=['Título da notícia', 'data da notícia','Resumo da notícia'])
